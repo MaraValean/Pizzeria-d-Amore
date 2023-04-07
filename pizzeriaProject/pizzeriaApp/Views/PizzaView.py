@@ -7,6 +7,8 @@ from django.db.models import Avg, Count, OuterRef, Subquery, Q, Case, When
 
 
 class PizzaDetail(APIView):
+    serializer_class = PizzaIdSerializer
+
     def get(self,request):
         obj = Pizza.objects.all()
         serializer = PizzaIdSerializer(obj, many=True)
@@ -22,6 +24,8 @@ class PizzaDetail(APIView):
 
 
 class PizzaInfo(APIView):
+    serializer_class = PizzaSerializer
+
     def get(self,request,id):
         try:
             obj=Pizza.objects.get(id=id)

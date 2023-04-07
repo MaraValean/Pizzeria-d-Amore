@@ -7,6 +7,8 @@ from ..Serializers.PizzaOrderSerializer import PizzaOrderSerializer
 
 
 class PizzaOrderDetail(APIView):
+    serializer_class = PizzaOrderSerializer
+
     def get(self, request):
         obj = PizzaOrder.objects.all()
         serializer = PizzaOrderSerializer(obj, many=True)
@@ -22,6 +24,8 @@ class PizzaOrderDetail(APIView):
 
 
 class PizzaOrderInfo(APIView):
+    serializer_class = PizzaOrderSerializer
+
     def get(selfself, request, id):
         try:
             obj = PizzaOrder.objects.get(id=id)

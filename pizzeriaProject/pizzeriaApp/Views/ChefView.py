@@ -2,12 +2,14 @@ from ..Models.Chef import Chef
 from ..Serializers.ChefSerializer import ChefSerializer, ChefIdSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import status
+from rest_framework import status, generics
 
 from ..Serializers.PizzaSerializer import PizzaSerializer
 
 
 class ChefDetail(APIView):
+    serializer_class = ChefIdSerializer
+
     def get(self, request):
         obj = Chef.objects.all()
         serializer = ChefIdSerializer(obj, many=True)
@@ -23,6 +25,7 @@ class ChefDetail(APIView):
 
 
 class ChefInfo(APIView):
+    serializer_class = ChefSerializer
     def get(self,request,id):
         try:
             obj=Chef.objects.get(id=id)
@@ -58,6 +61,8 @@ class ChefInfo(APIView):
 
 
 class ChefsWithSalaryBiggerThanN(APIView):
+    serializer_class = ChefSerializer
+
     def get(self,request,n):
         salary=Chef.objects.filter(salary__gte=n)
         serializer=ChefSerializer(salary,many=True)

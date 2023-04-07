@@ -7,7 +7,7 @@ from django.db.models import Avg, Count, OuterRef, Subquery, Q, Case, When
 
 
 class PizzaDetail(APIView):
-    serializer_class = PizzaIdSerializer
+    serializer_class = PizzaSerializer
 
     def get(self,request):
         obj = Pizza.objects.all()

@@ -9,7 +9,7 @@ from django.db.models import Avg, Count, OuterRef, Subquery, Q, Case, When
 
 
 class OrderDetail(APIView):
-    serializer_class = OrderIdSerializer
+    serializer_class = OrderSerializer
 
     def get(self, request):
         obj = Order.objects.all()

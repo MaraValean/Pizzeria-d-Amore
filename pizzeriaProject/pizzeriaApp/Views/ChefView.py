@@ -12,7 +12,7 @@ class ChefDetail(APIView):
 
     def get(self, request):
         obj = Chef.objects.all()
-        serializer = ChefIdSerializer(obj, many=True)
+        serializer = ChefSerializer(obj, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):

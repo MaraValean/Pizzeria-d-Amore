@@ -1,0 +1,11 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Chef', 'x':42, 'y':74, 'width':90, 'height':154, 'attrs': 'first_name|last_name|salary|seniority|shift', 'meths': '__str__'}
+{'type':'umlshape', 'id':'Pizza', 'x':516, 'y':1, 'width':66, 'height':170, 'attrs': 'chef|orders|price|sauce|sort|weight', 'meths': '__str__'}
+{'type':'umlshape', 'id':'Order', 'x':136, 'y':417, 'width':122, 'height':170, 'attrs': 'payment_method|pizzas|status|table|time|total_amount', 'meths': '__str__'}
+{'type':'umlshape', 'id':'PizzaOrder', 'x':648, 'y':279, 'width':110, 'height':138, 'attrs': 'instructions|order|pizza|waiter', 'meths': '__str__'}
+{'type':'umlshape', 'id':'models.Model', 'x':247, 'y':241, 'width':130, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'edge', 'id':'Chef_to_models.Model', 'source':'Chef', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrder_to_models.Model', 'source':'PizzaOrder', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Order_to_models.Model', 'source':'Order', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Pizza_to_models.Model', 'source':'Pizza', 'target':'models.Model', 'uml_edge_type': 'generalisation'}

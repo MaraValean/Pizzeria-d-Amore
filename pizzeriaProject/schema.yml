@@ -1,0 +1,604 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /pizzeriaApp/chef/:
+    get:
+      operationId: pizzeriaApp_chef_retrieve
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: pizzeriaApp_chef_create
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/chef/{id}/:
+    get:
+      operationId: pizzeriaApp_chef_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: pizzeriaApp_chef_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: pizzeriaApp_chef_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /pizzeriaApp/chef/{id}/pizzas/:
+    post:
+      operationId: pizzeriaApp_chef_pizzas_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/filterSalary/{n}/:
+    get:
+      operationId: pizzeriaApp_filterSalary_retrieve
+      parameters:
+      - in: path
+        name: n
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/order/:
+    get:
+      operationId: pizzeriaApp_order_retrieve
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: pizzeriaApp_order_create
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/order/{id}/:
+    get:
+      operationId: pizzeriaApp_order_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: pizzeriaApp_order_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: pizzeriaApp_order_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /pizzeriaApp/order/avgPizzaWeight/:
+    get:
+      operationId: pizzeriaApp_order_avgPizzaWeight_list
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+          description: ''
+  /pizzeriaApp/pizza/:
+    get:
+      operationId: pizzeriaApp_pizza_retrieve
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: pizzeriaApp_pizza_create
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/pizza/{id}/:
+    get:
+      operationId: pizzeriaApp_pizza_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: pizzeriaApp_pizza_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: pizzeriaApp_pizza_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /pizzeriaApp/pizza/mostOrdered/:
+    get:
+      operationId: pizzeriaApp_pizza_mostOrdered_list
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pizza'
+          description: ''
+  /pizzeriaApp/pizzaOrder/:
+    get:
+      operationId: pizzeriaApp_pizzaOrder_retrieve
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: pizzeriaApp_pizzaOrder_create
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /pizzeriaApp/pizzaOrder/{id}/:
+    get:
+      operationId: pizzeriaApp_pizzaOrder_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: pizzeriaApp_pizzaOrder_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: pizzeriaApp_pizzaOrder_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizzeriaApp
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        avg_weight:
+          type: number
+          format: double
+          readOnly: true
+        total_amount:
+          type: number
+          format: double
+        payment_method:
+          type: string
+          maxLength: 10
+        table:
+          type: integer
+        status:
+          type: string
+          maxLength: 50
+        time:
+          type: string
+          format: date-time
+        pizzas:
+          type: array
+          items:
+            type: integer
+          readOnly: true
+      required:
+      - avg_weight
+      - id
+      - payment_method
+      - pizzas
+      - status
+      - table
+      - total_amount
+    Pizza:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        sort:
+          type: string
+          maxLength: 50
+        sauce:
+          type: string
+          maxLength: 50
+        price:
+          type: number
+          format: double
+        weight:
+          type: integer
+        order_count:
+          type: string
+          readOnly: true
+        chef:
+          type: integer
+        orders:
+          type: array
+          items:
+            type: integer
+          readOnly: true
+      required:
+      - chef
+      - id
+      - order_count
+      - orders
+      - price
+      - sauce
+      - sort
+      - weight
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

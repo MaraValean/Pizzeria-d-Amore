@@ -70,6 +70,8 @@ class ChefsWithSalaryBiggerThanN(APIView):
 
 
 class AddPizzasToChef(APIView):
+    serializer_class = ChefSerializer
+
     def post(self,request,id):
         pizzas = request.data
         msg = "CREATED"

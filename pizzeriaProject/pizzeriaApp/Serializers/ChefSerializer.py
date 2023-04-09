@@ -6,6 +6,7 @@ from ..Serializers.PizzaSerializer import PizzaIdSerializer, PizzaSerializer
 
 class ChefSerializer(serializers.ModelSerializer):
     pizzas=PizzaSerializer(many=True,read_only=True)
+    chef_id = serializers.IntegerField(write_only=True)
     class Meta:
         model = Chef
         fields = "__all__"

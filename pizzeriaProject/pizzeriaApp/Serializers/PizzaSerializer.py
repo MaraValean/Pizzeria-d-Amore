@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from .OrderSerializer import OrderSerializer
 from ..Models.Chef import Chef
 from ..Models.Pizza import Pizza
 
@@ -9,7 +10,9 @@ class PizzaSerializer(serializers.ModelSerializer):
     sauce = serializers.CharField(max_length=50)
     price = serializers.FloatField()
     weight = serializers.IntegerField()
-    chef=Chef()
+    # chef=Chef()
+    orders=OrderSerializer(many=True,read_only=True)
+
     order_count=serializers.SerializerMethodField()
     # chef_id=serializers.IntegerField(write_only=True)
 

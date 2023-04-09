@@ -10,11 +10,11 @@ class PizzaSerializer(serializers.ModelSerializer):
     sauce = serializers.CharField(max_length=50)
     price = serializers.FloatField()
     weight = serializers.IntegerField()
-    # chef=Chef()
+    chef=Chef()
     orders=OrderSerializer(many=True,read_only=True)
 
     order_count=serializers.SerializerMethodField()
-    chef_id=serializers.IntegerField(write_only=True)
+    # chef_id=serializers.IntegerField(write_only=True)
 
     def validate_chef_id(self,value):
         filter = Chef.objects.filter(id=value)

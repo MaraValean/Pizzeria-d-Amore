@@ -11,7 +11,7 @@ class PizzaDetail(APIView):
 
     def get(self,request):
         obj = Pizza.objects.all()
-        serializer = PizzaIdSerializer(obj, many=True)
+        serializer = PizzaSerializer(obj, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self,request):

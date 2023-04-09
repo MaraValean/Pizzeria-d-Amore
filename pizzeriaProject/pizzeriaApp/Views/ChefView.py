@@ -8,7 +8,7 @@ from ..Serializers.PizzaSerializer import PizzaSerializer
 
 
 class ChefDetail(APIView):
-    serializer_class = ChefIdSerializer
+    serializer_class = ChefSerializer
 
     def get(self, request):
         obj = Chef.objects.all()

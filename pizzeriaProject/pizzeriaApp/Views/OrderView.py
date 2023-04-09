@@ -13,7 +13,7 @@ class OrderDetail(APIView):
 
     def get(self, request):
         obj = Order.objects.all()
-        serializer = OrderIdSerializer(obj, many=True)
+        serializer = OrderSerializer(obj, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):

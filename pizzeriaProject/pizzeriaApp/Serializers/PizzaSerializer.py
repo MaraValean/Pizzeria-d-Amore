@@ -14,7 +14,7 @@ class PizzaSerializer(serializers.ModelSerializer):
     orders=OrderSerializer(many=True,read_only=True)
 
     order_count=serializers.SerializerMethodField()
-    chef_id=serializers.IntegerField(write_only=True)
+    # chef_id=serializers.IntegerField(write_only=True)
 
     def validate_chef_id(self,value):
         filter = Chef.objects.filter(id=value)

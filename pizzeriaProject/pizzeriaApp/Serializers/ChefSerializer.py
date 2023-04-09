@@ -8,7 +8,7 @@ class ChefSerializer(serializers.ModelSerializer):
     pizzas=PizzaSerializer(many=True,read_only=True)
     class Meta:
         model = Chef
-        fields = ('id','first_name','last_name','pizzas')
+        fields = "__all__"
 
 
 class ChefIdSerializer(serializers.ModelSerializer):

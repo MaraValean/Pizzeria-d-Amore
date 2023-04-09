@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .Views.ChefView import ChefDetail, ChefInfo, ChefsWithSalaryBiggerThanN, AddPizzasToChef
+from .Views.ChefView import ChefDetail, ChefInfo, ChefsWithSalaryBiggerThanN, AddPizzasToChef, ChefViewForAutocomplete
 from .Views.OrderView import OrderDetail, OrderInfo, OrdersByAvgPizzaWeight
 from .Views.PizzaOrderView import PizzaOrderDetail, PizzaOrderInfo
 from .Views.PizzaView import PizzaDetail, PizzaInfo, MostOrderedPizza
@@ -17,6 +17,7 @@ urlpatterns=[
     path("pizzaOrder/<int:id>/",PizzaOrderInfo.as_view()),
     path("order/avgPizzaWeight/",OrdersByAvgPizzaWeight.as_view(),name='order_avg_pizza_weight'),
     path("pizza/mostOrdered/",MostOrderedPizza.as_view(),name='pizza_most_ordered'),
-    path("chef/<int:id>/pizzas/",AddPizzasToChef.as_view())
+    path("chef/<int:id>/pizzas/",AddPizzasToChef.as_view()),
+    path("chef/autocomplete/", ChefViewForAutocomplete.as_view()),
 
 ]

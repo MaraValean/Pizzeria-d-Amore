@@ -83,3 +83,16 @@ class AddPizzasToChef(APIView):
             if serializer.is_valid():
                 serializer.save()
         return Response(msg, status=status.HTTP_201_CREATED)
+
+class ChefViewForAutocomplete(APIView):
+    serializer_class = ChefSerializer
+
+    def get(self, request, *args, **kwargs):
+
+        query = request.GET.get('query')
+        # TODO: leverage full text search (using a raw query if needed)
+        # for example in postgres:
+        # SELECT * FROM teacher WHERE to_tsvector(name) @@ to_tsquery(query)
+        chefs = Chef.objects.filter(name__icontains=query).order_by('first_name')[:20]
+        serializer = ChefSerializer(chefs, many=True)
+        return Response(serializer.data)

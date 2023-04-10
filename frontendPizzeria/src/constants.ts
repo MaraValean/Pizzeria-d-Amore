@@ -1,0 +1,1 @@
+export const BACKEND_API_URL = "http://ec2-16-16-90-247.eu-north-1.compute.amazonaws.com/pizzeriaApp";

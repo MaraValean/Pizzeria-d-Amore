@@ -7,7 +7,7 @@ export interface Pizza{
     sauce:string;
     price:number;
     weight:number;
-    chef?:Chef;
+    chef?:number | Chef;
     orders?:Order[];
     // chef_id?:number;
 }

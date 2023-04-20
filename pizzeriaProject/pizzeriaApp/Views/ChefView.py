@@ -1,3 +1,5 @@
+from django.db.models import Q
+
 from ..Models.Chef import Chef
 from ..Serializers.ChefSerializer import ChefSerializer, ChefIdSerializer
 from rest_framework.response import Response
@@ -93,6 +95,6 @@ class ChefViewForAutocomplete(APIView):
         # TODO: leverage full text search (using a raw query if needed)
         # for example in postgres:
         # SELECT * FROM teacher WHERE to_tsvector(name) @@ to_tsquery(query)
-        chefs = Chef.objects.filter(first_name__icontains=query, last_name__icontains=query).order_by('first_name')[:20]
+        chefs = Chef.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query)).order_by('first_name')[:20]
         serializer = ChefSerializer(chefs, many=True)
         return Response(serializer.data)

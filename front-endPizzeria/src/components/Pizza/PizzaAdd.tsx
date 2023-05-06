@@ -10,12 +10,13 @@ import { debounce } from "lodash";
 
 export const PizzaAdd = () => {
     const navigate = useNavigate();
-    const [pizza, setPizza] = useState({
+    const [pizza, setPizza] = useState<Pizza>({
         sort:"",
         sauce:"",
         price:0,
         weight:0,  
-        chef:1,
+        chef:0,
+		calories:0
     });
 
     const [chef, setChef] = useState<Chef[]>([]);
@@ -23,7 +24,7 @@ export const PizzaAdd = () => {
 	const fetchSuggestions = async (query: string) => {
 		try {
 			const response = await axios.get<Chef[]>(
-				`${BACKEND_API_URL}/chef?query=${query}`
+				`${BACKEND_API_URL}/chef/autocomplete?query=${query}`
 			);
 			const data = await response.data;
 			setChef(data);
@@ -31,7 +32,7 @@ export const PizzaAdd = () => {
 			console.error("Error fetching suggestions:", error);
 		}
 	};
-
+//ensures that the fetch suggestion is called at most once every 500ms
 	const debouncedFetchSuggestions = useCallback(debounce(fetchSuggestions, 500), []);
 
 	useEffect(() => {
@@ -97,13 +98,21 @@ export const PizzaAdd = () => {
 							sx={{ mb: 2 }}
 							onChange={(event) => setPizza({ ...pizza, weight: +event.target.value })}
 						/>
+						<TextField
+							id="calories"
+							label="Calories"
+							variant="outlined"
+							fullWidth
+							sx={{ mb: 2 }}
+							onChange={(event) => setPizza({ ...pizza, calories: +event.target.value })}
+						/>
 						<Autocomplete
-							id="chef_id"
+							id="chef"
 							options={chef}
 							getOptionLabel={(option) => `${option.first_name} - ${option.last_name}`}
 							renderInput={(params) => <TextField {...params} label="Chef" variant="outlined" />}
 							filterOptions={(x) => x}
-							onInputChange={handleInputChange}
+							onInputChange={handleInputChange} //debounced function
 							onChange={(event, value) => {
 								if (value) {
 									console.log(value);

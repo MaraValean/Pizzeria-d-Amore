@@ -16,6 +16,7 @@ export const PizzaUpdate = () => {
         price:0,
         weight:0,  
         chef:1,
+		calories:0,
     });
 
     useEffect(() => {
@@ -28,6 +29,7 @@ export const PizzaUpdate = () => {
                 price:pizza.price,
                 weight:pizza.weight,  
                 chef:pizza.chef,
+				calories:pizza.calories,
             })
             setLoading(false);
             console.log(pizza);
@@ -85,7 +87,14 @@ export const PizzaUpdate = () => {
 							sx={{ mb: 2 }}
 							onChange={(event) => setPizza({ ...pizza, weight: +event.target.value })}
 						/>
-
+						   <TextField
+							id="calories"
+							label="Calories"
+							variant="outlined"
+							fullWidth
+							sx={{ mb: 2 }}
+							onChange={(event) => setPizza({ ...pizza, calories: +event.target.value })}
+						/>
 						<Button type="submit">Update Pizza</Button>
 					</form>
 				</CardContent>

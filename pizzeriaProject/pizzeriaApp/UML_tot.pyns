@@ -1,0 +1,51 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Chef', 'x':42, 'y':264, 'width':90, 'height':154, 'attrs': 'first_name|last_name|salary|seniority|shift', 'meths': '__str__'}
+{'type':'umlshape', 'id':'Pizza', 'x':516, 'y':1, 'width':66, 'height':170, 'attrs': 'chef|orders|price|sauce|sort|weight', 'meths': '__str__'}
+{'type':'umlshape', 'id':'Order', 'x':10, 'y':492, 'width':122, 'height':170, 'attrs': 'payment_method|pizzas|status|table|time|total_amount', 'meths': '__str__'}
+{'type':'umlshape', 'id':'PizzaOrder', 'x':742, 'y':443, 'width':110, 'height':138, 'attrs': 'instructions|order|pizza|waiter', 'meths': '__str__'}
+{'type':'umlshape', 'id':'models.Model', 'x':232, 'y':544, 'width':130, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'PizzeriaappConfig', 'x':15, 'y':134, 'width':180, 'height':80, 'attrs': 'default_auto_field|name', 'meths': ''}
+{'type':'umlshape', 'id':'AppConfig', 'x':182, 'y':339, 'width':100, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'ChefSerializer', 'x':38, 'y':101, 'width':150, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Meta', 'x':61, 'y':4, 'width':58, 'height':80, 'attrs': 'fields|model', 'meths': ''}
+{'type':'umlshape', 'id':'ChefIdSerializer', 'x':632, 'y':356, 'width':170, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'PizzaSerializer', 'x':339, 'y':5, 'width':160, 'height':128, 'attrs': 'chef|price|sauce|sort|weight', 'meths': ''}
+{'type':'umlshape', 'id':'PizzaIdSerializer', 'x':182, 'y':492, 'width':180, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'OrderSerializer', 'x':308, 'y':622, 'width':160, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'OrderIdSerializer', 'x':182, 'y':414, 'width':180, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'PizzaOrderSerializer', 'x':520, 'y':194, 'width':210, 'height':112, 'attrs': 'instructions|order|pizza|waiter', 'meths': ''}
+{'type':'umlshape', 'id':'PizzaOrderIdSerializer', 'x':412, 'y':544, 'width':230, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'serializers.ModelSerializer', 'x':412, 'y':700, 'width':280, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'PizzaDetail', 'x':245, 'y':149, 'width':120, 'height':80, 'attrs': '', 'meths': 'get|post'}
+{'type':'umlshape', 'id':'PizzaInfo', 'x':592, 'y':66, 'width':100, 'height':96, 'attrs': '', 'meths': 'delete|get|put'}
+{'type':'umlshape', 'id':'ChefDetail', 'x':412, 'y':414, 'width':110, 'height':80, 'attrs': '', 'meths': 'get|post'}
+{'type':'umlshape', 'id':'ChefInfo', 'x':169, 'y':3, 'width':90, 'height':96, 'attrs': '', 'meths': 'delete|get|put'}
+{'type':'umlshape', 'id':'ChefsWithSalaryBiggerThanN', 'x':780, 'y':242, 'width':270, 'height':64, 'attrs': '', 'meths': 'get'}
+{'type':'umlshape', 'id':'OrderDetail', 'x':412, 'y':778, 'width':120, 'height':80, 'attrs': '', 'meths': 'get|post'}
+{'type':'umlshape', 'id':'OrderInfo', 'x':592, 'y':443, 'width':100, 'height':96, 'attrs': '', 'meths': 'delete|get|put'}
+{'type':'umlshape', 'id':'PizzaOrderDetail', 'x':412, 'y':908, 'width':170, 'height':80, 'attrs': '', 'meths': 'get|post'}
+{'type':'umlshape', 'id':'PizzaOrderInfo', 'x':742, 'y':589, 'width':150, 'height':96, 'attrs': '', 'meths': 'delete|get|put'}
+{'type':'umlshape', 'id':'APIView', 'x':245, 'y':279, 'width':80, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'edge', 'id':'Chef_to_models.Model', 'source':'Chef', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrder_to_models.Model', 'source':'PizzaOrder', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Order_to_models.Model', 'source':'Order', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Pizza_to_models.Model', 'source':'Pizza', 'target':'models.Model', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzeriaappConfig_to_AppConfig', 'source':'PizzeriaappConfig', 'target':'AppConfig', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ChefIdSerializer_to_serializers.ModelSerializer', 'source':'ChefIdSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaSerializer_to_serializers.ModelSerializer', 'source':'PizzaSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'OrderIdSerializer_to_serializers.ModelSerializer', 'source':'OrderIdSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'OrderSerializer_to_serializers.ModelSerializer', 'source':'OrderSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrderIdSerializer_to_serializers.ModelSerializer', 'source':'PizzaOrderIdSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrderSerializer_to_serializers.ModelSerializer', 'source':'PizzaOrderSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ChefSerializer_to_serializers.ModelSerializer', 'source':'ChefSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaIdSerializer_to_serializers.ModelSerializer', 'source':'PizzaIdSerializer', 'target':'serializers.ModelSerializer', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrderDetail_to_APIView', 'source':'PizzaOrderDetail', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'OrderDetail_to_APIView', 'source':'OrderDetail', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'OrderInfo_to_APIView', 'source':'OrderInfo', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ChefInfo_to_APIView', 'source':'ChefInfo', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ChefDetail_to_APIView', 'source':'ChefDetail', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ChefsWithSalaryBiggerThanN_to_APIView', 'source':'ChefsWithSalaryBiggerThanN', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaDetail_to_APIView', 'source':'PizzaDetail', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaOrderInfo_to_APIView', 'source':'PizzaOrderInfo', 'target':'APIView', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'PizzaInfo_to_APIView', 'source':'PizzaInfo', 'target':'APIView', 'uml_edge_type': 'generalisation'}

@@ -7,23 +7,29 @@ from rest_framework import status, generics
 from django.db.models import Avg, Count, OuterRef, Subquery, Q, Case, When
 
 
-class PizzaDetail(APIView):
+# class PizzaDetail(APIView):
+#     serializer_class = PizzaSerializer
+#     pagination_class = CustomPagination
+
+#     def get(self,request):
+#         obj = Pizza.objects.all()
+#         serializer = PizzaSerializer(obj, many=True)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
+
+#     def post(self,request):
+#         serializer = PizzaSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data,status=status.HTTP_201_CREATED)
+
+#         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+class PizzaDetail(generics.ListCreateAPIView):
     serializer_class = PizzaSerializer
     pagination_class = CustomPagination
 
-    def get(self,request):
-        obj = Pizza.objects.all()
-        serializer = PizzaSerializer(obj, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-    def post(self,request):
-        serializer = PizzaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-
-        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
-
+    def get_queryset(self):
+        query = Pizza.objects.all()
+        return query
 
 class PizzaInfo(APIView):
     serializer_class = PizzaSerializer

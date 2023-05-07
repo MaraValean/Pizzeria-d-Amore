@@ -22,6 +22,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { Pizza } from "../../models/Pizza";
 import {Chef} from "../../models/Chef";
 import { BACKEND_API_URL } from "../../constants";
+import { Paginator } from "../Pagination/Pagination";
 
 export const AllPizzas = () => {
 	const [loading, setLoading] = useState(false);
@@ -104,7 +105,7 @@ export const AllPizzas = () => {
 				</IconButton>
 			)}
 			{!loading && pizzas.length > 0 && (
-				<TableContainer component={Paper}>
+				<><TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
 						<TableHead>
 							<TableRow>
@@ -116,7 +117,7 @@ export const AllPizzas = () => {
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{pizzas.map((pizza:Pizza, index) => (
+							{pizzas.map((pizza: Pizza, index) => (
 								<TableRow key={pizza.id}>
 									<TableCell component="th" scope="row">
 										{index + 1}
@@ -150,7 +151,15 @@ export const AllPizzas = () => {
 							))}
 						</TableBody>
 					</Table>
-				</TableContainer>
+				</TableContainer><Paginator
+						rowsPerPage={pageSize}
+						totalRows={totalRows}
+						currentPage={page}
+						isFirstPage={page === 1}
+						isLastPage={isLastPage}
+						setPage={setCurrentPage}
+						goToNextPage={goToNextPage}
+						goToPrevPage={goToPrevPage} /></>
 			)}
 		</Container>
 	);

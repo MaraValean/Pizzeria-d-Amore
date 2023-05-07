@@ -27,15 +27,47 @@ export const AllPizzas = () => {
 	const [loading, setLoading] = useState(false);
 	const [pizzas, setPizzas] = useState<Pizza[]>([]);
 
-	useEffect(() => {
+	const [page, setPage] = useState(1);
+    const [pageSize, setPageSize] = useState(10);
+    const current = (page - 1) * pageSize + 1;
+    const [isLastPage, setIsLastPage] = useState(false);
+    const [totalRows, setTotalRows] = useState(0);
+
+	const setCurrentPage = (newPage: number) => {
+        setPage(newPage);
+    }
+
+    const goToNextPage = () => {
+        if (isLastPage) {
+            return;
+        }
+
+        setPage(page + 1);
+    }
+
+    const goToPrevPage = () => {
+        if (page === 1) {
+            return;
+        }
+
+        setPage(page - 1);
+    }
+
+
+	const fetchPizza = async() => {
 		setLoading(true);
-		fetch(`${BACKEND_API_URL}/pizza`)
-			.then((response) => response.json())
-			.then((data) => {
-				setPizzas(data);
-				setLoading(false);
-			});
-	}, []);
+		const response = await fetch(`${BACKEND_API_URL}/pizza/?page=${page}&pageSize=${pageSize}`);
+		const {count, next, previous, results} = await response.json();
+		setPizzas(results);
+		setTotalRows(count);	
+		setIsLastPage(!next);
+		setLoading(false);
+
+	};
+
+	useEffect(() => {
+		fetchPizza();
+	}, [page]);
 
 	const sortPizza = () => {
         const sortedPizzas = [...pizzas].sort((a: Pizza, b:Pizza) => {

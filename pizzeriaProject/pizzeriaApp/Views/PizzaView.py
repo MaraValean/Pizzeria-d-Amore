@@ -1,3 +1,4 @@
+from pizzeriaProject.pizzeriaApp.Views.Pagination import CustomPagination
 from ..Models.Pizza import Pizza
 from ..Serializers.PizzaSerializer import PizzaSerializer, PizzaIdSerializer
 from rest_framework.response import Response
@@ -8,9 +9,10 @@ from django.db.models import Avg, Count, OuterRef, Subquery, Q, Case, When
 
 class PizzaDetail(APIView):
     serializer_class = PizzaSerializer
+    pagination_class = CustomPagination
 
     def get(self,request):
-        obj = Pizza.objects.all()[:100]
+        obj = Pizza.objects.all()
         serializer = PizzaSerializer(obj, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

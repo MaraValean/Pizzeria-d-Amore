@@ -1,4 +1,4 @@
-from pizzeriaProject.pizzeriaApp.Views.Pagination import CustomPagination
+from ..Views.Pagination import CustomPagination
 from ..Models.Pizza import Pizza
 from ..Serializers.PizzaSerializer import PizzaSerializer, PizzaIdSerializer
 from rest_framework.response import Response

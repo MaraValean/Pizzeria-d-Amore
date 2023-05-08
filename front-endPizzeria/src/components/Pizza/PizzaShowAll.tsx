@@ -57,7 +57,7 @@ export const AllPizzas = () => {
 
 	const fetchPizza = async() => {
 		setLoading(true);
-		const response = await fetch(`${BACKEND_API_URL}/pizza/?page=${page}&pageSize=${pageSize}`);
+		const response = await fetch(`${BACKEND_API_URL}/pizza/?page=${page}&page_size=${pageSize}`);
 		// const response = await fetch(`${BACKEND_API_URL}/pizza/`);
 		const {count, next, previous, results} = await response.json();
 		setPizzas(results);
